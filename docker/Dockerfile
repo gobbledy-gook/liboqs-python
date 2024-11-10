@@ -120,7 +120,8 @@ RUN addgroup -g 1000 -S oqs && adduser --uid 1000 -S oqs -G oqs
 
 USER oqs
 WORKDIR /home/oqs
-COPY ./liboqs-python/docker/minitest.py /home/oqs/minitest.py
+COPY minitest.py /home/oqs/minitest.py
+COPY ../oqs/mitm.py /home/oqs/mitm.py
 COPY --from=intermediate /opt/isrgrootx1.pem /home/oqs/isrgrootx1.pem
 
 # ensure oqs libs are found. Unset if interested in using stock openssl:
