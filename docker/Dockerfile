@@ -96,6 +96,7 @@ FROM alpine:latest
 ARG INSTALLDIR
 ARG SIG_ALG
 
+EXPOSE 3000
 RUN apk update && apk upgrade
 RUN apk add py3-pip python3
 
